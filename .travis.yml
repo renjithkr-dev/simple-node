@@ -1,3 +1,13 @@
 language: node_js
 node_js:
     - 13
+script:
+    - docker --version
+    - echo "Beginning docker build"
+    - docker build -t simple-node .
+    - docker tag simple-node renjithkr-dev/tech:simple-node
+
+after_success:
+    - echo "About to create container in Docker registry"
+    - echo "$D_PSWD" | docker login -u "D_UNAME" --password-stdin
+    - docker push renjithkr-dev/tech
