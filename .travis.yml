@@ -5,7 +5,7 @@ script:
     - docker --version
     - echo "Beginning docker build"
     - docker build -t simple-node .
-    - docker tag simple-node renjithkr-dev/tech:simple-node
+    - docker tag simple-node renjithtech6/tech:simple-node
 
 after_success:
     - echo "About to create container in Docker registry"
