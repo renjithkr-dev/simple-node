@@ -10,4 +10,4 @@ script:
 after_success:
     - echo "About to create container in Docker registry"
     - echo "$D_PSWD" | docker login -u "D_UNAME" --password-stdin
-    - docker push renjithkr-dev/tech
+    - docker push renjithtech6/tech
